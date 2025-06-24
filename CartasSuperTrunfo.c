@@ -4,12 +4,13 @@ int main(){
     char estado1[50], estado2[50]; //string
     char codigocarta1[50], codigocarta2[50]; //string
     char nomedacidade1[150], nomedacidade2[150]; //string
-    int populacao1, populacao2; //numero inteiro
+    unsigned long int populacao1, populacao2; //numero inteiro
     int numeroponturisticos1, numeroponturisticos2; //numero inteiro
     float areakm21, areakm22; //numero decimal (com vírgula)
     float PIB1, PIB2; //numero decimal (com vírgula)
     float PIBPC1, PIBPC2; //numero decimal (com vírgula)
     float DensDem1, DensDem2; //numero decimal (com vírgula)
+    float SuPower1, SuPower2; 
 
     printf("Registrando Dados dos estados \n");
     printf("------------------------------------------------------------------------------------------------------------------------ \n");
@@ -21,7 +22,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta1); //é para o Código 
 
-    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome de uma cidade do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade1); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -45,7 +46,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta2); //é para o Código 
 
-    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome de uma cidade do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade2); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -79,6 +80,7 @@ int main(){
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos1);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem1);
     printf("PIB per Capita: %.2f reais \n", PIBPC1);
+    printf("Super Poder: %.2f \n", SuPower1)
 //------------------------------------------------------------------------------------------------------------------------
     printf("\n");
     printf("\n");
@@ -96,5 +98,14 @@ int main(){
     printf("PIB: %.2f bilhões de reais \n", PIB2);
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos2);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem2);
-    printf("PIB per Capita: %.2f reais \n", PIBPC2);    
+    printf("PIB per Capita: %.2f reais \n", PIBPC2);
+    printf("Super Poder: %.2f \n", SuPower2);
+//------------------------------------------------------------------------------------------------------------------------
+    printf("------------------------------------------------------------------------------------------------------------------------ \n");
+//------------------------------------------------------------------------------------------------------------------------
+    SuPower1 = (populacao1 + areakm21 + PIB1 + numeroponturisticos1 + PIBPC1) + (DensDem1 * -1); //Super Poder da Carta 1
+    SuPower2 = (populacao2 + areakm22 + PIB2 + numeroponturisticos2 + PIBPC2) + (DensDem2 * -1); //Super Poder da Carta 2
+//------------------------------------------------------------------------------------------------------------------------
+    printf("Super Poder: %.2f\n", SuPower1);
+    printf("Super Poder: %.2f\n", SuPower2);   
 }
