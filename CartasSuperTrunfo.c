@@ -22,7 +22,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta1); //é para o Código 
 
-    printf("Digite o nome de uma cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade1); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -46,7 +46,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta2); //é para o Código 
 
-    printf("Digite o nome de uma cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade2); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -69,6 +69,9 @@ int main(){
     DensDem2 = populacao2 / areakm22; //Calcula a Densidade Demográfica e entrega o resultado em habitantes por quilômetro quadrado da Carta 2
     PIBPC2 = PIB2 / populacao2; //Calcula o PIB per Capita da Carta 2 
 //------------------------------------------------------------------------------------------------------------------------
+    SuPower1 = (populacao1 + areakm21 + PIB1 + numeroponturisticos1 + PIBPC1) + (DensDem1 * -1); //Super Poder da Carta 1
+    SuPower2 = (populacao2 + areakm22 + PIB2 + numeroponturisticos2 + PIBPC2) + (DensDem2 * -1); //Super Poder da Carta 2
+//------------------------------------------------------------------------------------------------------------------------ 
     printf("Carta 1 \n");
     printf("\n");
     printf("Estado: %s \n", estado1);
@@ -80,7 +83,7 @@ int main(){
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos1);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem1);
     printf("PIB per Capita: %.2f reais \n", PIBPC1);
-    printf("Super Poder: %.2f \n", SuPower1)
+    printf("Super Poder: %.2f \n", SuPower1);
 //------------------------------------------------------------------------------------------------------------------------
     printf("\n");
     printf("\n");
@@ -99,13 +102,58 @@ int main(){
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos2);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem2);
     printf("PIB per Capita: %.2f reais \n", PIBPC2);
-    printf("Super Poder: %.2f \n", SuPower2);
+    printf("Super Poder: %.2f \n", SuPower2);  
 //------------------------------------------------------------------------------------------------------------------------
     printf("------------------------------------------------------------------------------------------------------------------------ \n");
-//------------------------------------------------------------------------------------------------------------------------
-    SuPower1 = (populacao1 + areakm21 + PIB1 + numeroponturisticos1 + PIBPC1) + (DensDem1 * -1); //Super Poder da Carta 1
-    SuPower2 = (populacao2 + areakm22 + PIB2 + numeroponturisticos2 + PIBPC2) + (DensDem2 * -1); //Super Poder da Carta 2
-//------------------------------------------------------------------------------------------------------------------------
-    printf("Super Poder: %.2f\n", SuPower1);
-    printf("Super Poder: %.2f\n", SuPower2);   
+//------------------------------------------------------------------------------------------------------------------------ 
+    printf("Comparação de Cartas:\n");
+    if (condition)
+    {
+        /* code */
+    } else {
+
+    } // Comparando População
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando Área
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando PIB
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando Pontos Turísticos
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando Densidade Populacional
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando PIB per Capita
+
+        if (condition)
+    {
+        /* code */
+    } else {
+        
+    } // Comparando Super Poder
+    
 }
