@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 int main(){
-    char estado1[50], estado2[50]; //string
-    char codigocarta1[50], codigocarta2[50]; //string
-    char nomedacidade1[150], nomedacidade2[150]; //string
-    unsigned long int populacao1, populacao2; //numero inteiro
-    int numeroponturisticos1, numeroponturisticos2; //numero inteiro
-    float areakm21, areakm22; //numero decimal (com vírgula)
-    float PIB1, PIB2; //numero decimal (com vírgula)
-    float PIBPC1, PIBPC2; //numero decimal (com vírgula)
-    float DensDem1, DensDem2; //numero decimal (com vírgula)
-    float SuPower1, SuPower2; 
+    char estado1[50], estado2[50]; //string, Armazena o nome do estado
+    char codigocarta1[50], codigocarta2[50]; //string, Armazena o código da carta
+    char nomedacidade1[150], nomedacidade2[150]; //string, Armazena o nome de uma cidade que fica no estado
+    unsigned long int populacao1, populacao2; //numero inteiro, Armazena a quantidade de moradores da cidade
+    int numeroponturisticos1, numeroponturisticos2; //numero inteiro, Armazena a quantidade de pontos turísticos que tem na cidade
+    float areakm21, areakm22; //numero decimal (com vírgula), Armazena o tamanho da cidade, em quilometros quadrados
+    float PIB1, PIB2; //numero decimal (com vírgula), Armazena o valor do Produto Interno Bruto
+    float PIBPC1, PIBPC2; //numero decimal (com vírgula), Armazena o valor do Produto Interno Bruto per capita
+    float DensDem1, DensDem2; //numero decimal (com vírgula), Armazena o valor da Densidade Populacional (Densidade Demográfica)
+    float SuperPoder1, SuperPoder2; //numero decimal (com vírgula), Armazena o valor do Super Poder das cartas
 
     printf("Registrando Dados dos estados \n");
     printf("------------------------------------------------------------------------------------------------------------------------ \n");
@@ -22,7 +22,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta1); //é para o Código 
 
-    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome de uma cidade dentro do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade1); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -46,7 +46,7 @@ int main(){
     printf("Digite uma letra maiuscula, de A a H \nColoque junto da letra um número de 01 a 04 (usando o zero no meio) \nExemplo: A01:\n");
     scanf("%s", codigocarta2); //é para o Código 
 
-    printf("Digite o nome da cidade do estado, sem dar espaço: \n");
+    printf("Digite o nome de uma cidade dentro do estado, sem dar espaço: \n");
     scanf("%s", nomedacidade2); //é para o Nome da Cidade
 
     printf("Digite a quantidade de moradores que o estado tem: \n");
@@ -69,8 +69,8 @@ int main(){
     DensDem2 = populacao2 / areakm22; //Calcula a Densidade Demográfica e entrega o resultado em habitantes por quilômetro quadrado da Carta 2
     PIBPC2 = PIB2 / populacao2; //Calcula o PIB per Capita da Carta 2 
 //------------------------------------------------------------------------------------------------------------------------
-    SuPower1 = (populacao1 + areakm21 + PIB1 + numeroponturisticos1 + PIBPC1) + (DensDem1 * -1); //Super Poder da Carta 1
-    SuPower2 = (populacao2 + areakm22 + PIB2 + numeroponturisticos2 + PIBPC2) + (DensDem2 * -1); //Super Poder da Carta 2
+    SuperPoder1 = (populacao1 + areakm21 + PIB1 + numeroponturisticos1 + PIBPC1) + (DensDem1 * -1); //Super Poder da Carta 1
+    SuperPoder2 = (populacao2 + areakm22 + PIB2 + numeroponturisticos2 + PIBPC2) + (DensDem2 * -1); //Super Poder da Carta 2
 //------------------------------------------------------------------------------------------------------------------------ 
     printf("Carta 1 \n");
     printf("\n");
@@ -83,7 +83,7 @@ int main(){
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos1);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem1);
     printf("PIB per Capita: %.2f reais \n", PIBPC1);
-    printf("Super Poder: %.2f \n", SuPower1);
+    printf("Super Poder: %.2f \n", SuperPoder1);
 //------------------------------------------------------------------------------------------------------------------------
     printf("\n");
     printf("\n");
@@ -102,58 +102,51 @@ int main(){
     printf("Números de Pontos Turísticos: %d \n", numeroponturisticos2);
     printf("Densidade Demográfica: %.2f hab/km² \n", DensDem2);
     printf("PIB per Capita: %.2f reais \n", PIBPC2);
-    printf("Super Poder: %.2f \n", SuPower2);  
+    printf("Super Poder: %.2f \n", SuperPoder2);  
 //------------------------------------------------------------------------------------------------------------------------
     printf("------------------------------------------------------------------------------------------------------------------------ \n");
 //------------------------------------------------------------------------------------------------------------------------ 
-    printf("Comparação de Cartas:\n");
-    if (condition)
-    {
-        /* code */
+    printf("Comparação de Cartas:\n\n");
+    if (populacao1 > populacao2){
+        printf("População: %s venceu.\n", nomedacidade1);
     } else {
-
+        printf("População: %s venceu.\n", nomedacidade2);        
     } // Comparando População
 
-        if (condition)
-    {
-        /* code */
+    if (areakm21 > areakm22){
+        printf("Área: %s venceu.\n", nomedacidade1);
     } else {
-        
+        printf("Área: %s venceu.\n", nomedacidade2);        
     } // Comparando Área
 
-        if (condition)
-    {
-        /* code */
+    if (PIB1 > PIB2){
+        printf("PIB: %s venceu.\n", nomedacidade1);
     } else {
-        
+        printf("PIB: %s venceu.\n", nomedacidade2);        
     } // Comparando PIB
 
-        if (condition)
-    {
-        /* code */
+    if (numeroponturisticos1 > numeroponturisticos2){
+        printf("Pontos Turísticos: %s venceu.\n", nomedacidade1);
     } else {
-        
+        printf("Pontos Turísticos: %s venceu.\n", nomedacidade2);        
     } // Comparando Pontos Turísticos
 
-        if (condition)
-    {
-        /* code */
+    if (DensDem1 > DensDem2){
+        printf("Densidade Populacional: %s venceu.\n", nomedacidade2);
     } else {
-        
+        printf("Densidade Populacional: %s venceu.\n", nomedacidade1);        
     } // Comparando Densidade Populacional
 
-        if (condition)
-    {
-        /* code */
+    if (PIBPC1 > PIBPC2){
+        printf("PiB per Capita: %s venceu.\n", nomedacidade1);
     } else {
-        
+        printf("PiB per Capita: %s venceu.\n", nomedacidade2);        
     } // Comparando PIB per Capita
 
-        if (condition)
-    {
-        /* code */
+    if (SuperPoder1 > SuperPoder2){
+        printf("Super Poder: %s venceu.\n", nomedacidade1);
     } else {
-        
+        printf("Super Poder: %s venceu.\n", nomedacidade2);        
     } // Comparando Super Poder
     
 }
